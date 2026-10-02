@@ -7,7 +7,7 @@ import { LogoMark } from "@/components/brand/LogoMark";
 
 export function FinalCTASection() {
   return (
-    <section className="relative overflow-hidden bg-navy py-20 md:py-28">
+    <section className="relative overflow-hidden bg-navy py-16 md:py-24">
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 items-center justify-center opacity-[0.12] lg:flex">
         <LogoMark className="h-[22rem] w-[22rem] text-teal" />
       </div>

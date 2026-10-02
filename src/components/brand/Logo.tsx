@@ -3,7 +3,7 @@ import { LogoMark } from "./LogoMark";
 import { cn } from "@/lib/utils";
 
 export const BRAND_NAME = "The humanEaze";
-export const BRAND_TAGLINE = "Making your path easier";
+export const BRAND_TAGLINE = "MAKING YOUR PATH EASIER";
 
 type LogoProps = {
   href?: string | null;
@@ -27,22 +27,22 @@ function Wordmark({
     <span className={cn("flex min-w-0 flex-col", stacked ? "items-center text-center" : "items-start")}>
       <span
         className={cn(
-          "font-heading text-[1.05rem] font-semibold leading-none tracking-tight md:text-lg",
+          "font-sans text-[1.125rem] font-bold leading-none tracking-tight md:text-[1.35rem]",
           stacked && "text-2xl md:text-3xl"
         )}
       >
-        <span className={inverted ? "text-white" : "text-navy"}>The human</span>
+        <span className={inverted ? "text-white" : "text-blue"}>The human</span>
         <span className="text-teal">Eaze</span>
       </span>
       {showTagline ? (
         <span
           className={cn(
-            "mt-1.5 font-sans text-[0.55rem] font-medium uppercase tracking-[0.16em]",
-            inverted ? "text-white/70" : "text-navy",
+            "mt-1 font-sans text-[0.525rem] font-bold uppercase tracking-[0.16em] md:text-[0.575rem]",
+            inverted ? "text-white/80" : "text-navy",
             stacked && "mt-2 text-[0.65rem] tracking-[0.2em]"
           )}
         >
-          Making your path easier
+          {BRAND_TAGLINE}
         </span>
       ) : null}
     </span>
@@ -52,7 +52,7 @@ function Wordmark({
 export function Logo({
   href = "/",
   variant = "horizontal",
-  showTagline = false,
+  showTagline = true,
   inverted = false,
   className,
   markClassName,

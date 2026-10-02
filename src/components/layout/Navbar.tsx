@@ -41,7 +41,7 @@ export function Navbar() {
           href="/contact"
           className="hidden items-center gap-2 rounded-lg bg-teal px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal/90 hover:shadow-md lg:inline-flex"
         >
-          Get Started
+          Discuss Your HR Need
           <ArrowRight className="h-4 w-4" />
         </Link>
 
@@ -91,7 +91,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3 text-base font-medium text-white transition-all hover:bg-teal/90"
               >
-                Get Started
+                Discuss Your HR Need
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" style="width:100%;height:auto">
+<defs>
+  <!-- ============ GRADIENTS ============ -->
+  <linearGradient id="grad-people" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(135)">
+    <stop offset="0%" stop-color="#A8D5BA"/>
+    <stop offset="100%" stop-color="#7FBF9E"/>
+  </linearGradient>
+  <linearGradient id="grad-process" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(135)">
+    <stop offset="0%" stop-color="#7FB09C"/>
+    <stop offset="100%" stop-color="#4E8F7A"/>
+  </linearGradient>
+  <linearGradient id="grad-performance" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(135)">
+    <stop offset="0%" stop-color="#5B86A0"/>
+    <stop offset="100%" stop-color="#3F6A87"/>
+  </linearGradient>
+  <linearGradient id="grad-growth" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(135)">
+    <stop offset="0%" stop-color="#2F4F66"/>
+    <stop offset="100%" stop-color="#1F3A50"/>
+  </linearGradient>
+
+  <!-- ============ FILTERS ============ -->
+  <filter id="shadow-blur" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+  </filter>
+  <filter id="haze-blur" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+  </filter>
+
+  <!-- ============ BLOB PATHS (defined once, referenced via use or inline) ============ -->
+  <!-- People blob ~ center(140,390) radius ~70 -->
+  <!-- Process blob ~ center(330,330) radius ~75 -->
+  <!-- Performance blob ~ center(530,270) radius ~82 -->
+  <!-- Growth blob ~ center(730,215) radius ~92 -->
+</defs>
+
+<!-- ============================================================ -->
+<!-- BACKGROUND HAZE                                               -->
+<!-- ============================================================ -->
+<g id="background-haze">
+  <ellipse cx="200" cy="420" rx="160" ry="120" fill="#DCEBE4" opacity="0.10" filter="url(#haze-blur)"/>
+  <ellipse cx="480" cy="320" rx="180" ry="130" fill="#DCEBE4" opacity="0.10" filter="url(#haze-blur)"/>
+  <ellipse cx="750" cy="220" rx="170" ry="110" fill="#DCEBE4" opacity="0.10" filter="url(#haze-blur)"/>
+</g>
+
+<!-- ============================================================ -->
+<!-- GROUND SHADOWS                                                -->
+<!-- ============================================================ -->
+<g id="ground-shadows">
+  <!-- People shadow -->
+  <ellipse cx="140" cy="485" rx="63" ry="14" fill="#1F3A50" opacity="0.25" filter="url(#shadow-blur)"/>
+  <!-- Process shadow -->
+  <ellipse cx="330" cy="430" rx="68" ry="14" fill="#1F3A50" opacity="0.25" filter="url(#shadow-blur)"/>
+  <!-- Performance shadow -->
+  <ellipse cx="530" cy="377" rx="74" ry="14" fill="#1F3A50" opacity="0.25" filter="url(#shadow-blur)"/>
+  <!-- Growth shadow -->
+  <ellipse cx="730" cy="332" rx="83" ry="14" fill="#1F3A50" opacity="0.25" filter="url(#shadow-blur)"/>
+</g>
+
+<!-- ============================================================ -->
+<!-- STEP 1: PEOPLE  center(140,390) r~70                         -->
+<!-- ============================================================ -->
+<g id="step-people">
+  <!-- Layer 1 (back): rotated -12deg, offset (-8,6), opacity 0.30 -->
+  <path d="M140,320 C175,315 215,340 210,380 C208,420 185,460 140,460 C95,462 72,425 70,390 C68,355 105,318 140,320 Z"
+        fill="url(#grad-people)" opacity="0.30"
+        transform="translate(-8,6) rotate(-12,140,390)"/>
+  <!-- Layer 2 (middle): rotated +9deg, offset (7,-5), opacity 0.50 -->
+  <path d="M140,320 C175,315 215,340 210,380 C208,420 185,460 140,460 C95,462 72,425 70,390 C68,355 105,318 140,320 Z"
+        fill="url(#grad-people)" opacity="0.50"
+        transform="translate(7,-5) rotate(9,140,390)"/>
+  <!-- Layer 3 (front): no rotation, full opacity -->
+  <path d="M140,320 C175,315 215,340 210,380 C208,420 185,460 140,460 C95,462 72,425 70,390 C68,355 105,318 140,320 Z"
+        fill="url(#grad-people)" opacity="1.0"/>
+
+  <!-- Icon: three-person group (navy on light blob) -->
+  <g transform="translate(140,375)" stroke="#1F3A50" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Center person -->
+    <circle cx="0" cy="-14" r="7"/>
+    <path d="M-10,6 C-10,-2 10,-2 10,6"/>
+    <!-- Left person (smaller) -->
+    <circle cx="-18" cy="-10" r="5.5"/>
+    <path d="M-26,4 C-26,-2 -10,-2 -10,4"/>
+    <!-- Right person (smaller) -->
+    <circle cx="18" cy="-10" r="5.5"/>
+    <path d="M10,4 C10,-2 26,-2 26,4"/>
+  </g>
+  <!-- Label -->
+  <text x="140" y="418" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="#1F3A50">People</text>
+</g>
+
+<!-- ============================================================ -->
+<!-- STEP 2: PROCESS  center(330,330) r~75                        -->
+<!-- ============================================================ -->
+<g id="step-process">
+  <!-- Layer 1 (back) -->
+  <path d="M330,255 C372,250 408,280 405,325 C403,370 378,405 330,408 C282,410 258,375 255,335 C252,295 288,253 330,255 Z"
+        fill="url(#grad-process)" opacity="0.30"
+        transform="translate(-8,6) rotate(-12,330,330)"/>
+  <!-- Layer 2 (middle) -->
+  <path d="M330,255 C372,250 408,280 405,325 C403,370 378,405 330,408 C282,410 258,375 255,335 C252,295 288,253 330,255 Z"
+        fill="url(#grad-process)" opacity="0.50"
+        transform="translate(7,-5) rotate(9,330,330)"/>
+  <!-- Layer 3 (front) -->
+  <path d="M330,255 C372,250 408,280 405,325 C403,370 378,405 330,408 C282,410 258,375 255,335 C252,295 288,253 330,255 Z"
+        fill="url(#grad-process)" opacity="1.0"/>
+
+  <!-- Icon: gear (navy on lighter blob) -->
+  <g transform="translate(330,315)" stroke="#1F3A50" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="0" r="7"/>
+    <!-- Gear teeth (8 teeth) -->
+    <path d="M0,-13 L0,-17 M9.2,-9.2 L12,-12 M13,0 L17,0 M9.2,9.2 L12,12 M0,13 L0,17 M-9.2,9.2 L-12,12 M-13,0 L-17,0 M-9.2,-9.2 L-12,-12"/>
+    <circle cx="0" cy="0" r="13"/>
+  </g>
+  <!-- Label -->
+  <text x="330" y="358" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="#1F3A50">Process</text>
+</g>
+
+<!-- ============================================================ -->
+<!-- STEP 3: PERFORMANCE  center(530,270) r~82                    -->
+<!-- ============================================================ -->
+<g id="step-performance">
+  <!-- Layer 1 (back) -->
+  <path d="M530,188 C578,183 615,218 612,264 C609,310 582,352 530,355 C478,358 452,318 448,275 C444,232 482,186 530,188 Z"
+        fill="url(#grad-performance)" opacity="0.30"
+        transform="translate(-8,6) rotate(-12,530,270)"/>
+  <!-- Layer 2 (middle) -->
+  <path d="M530,188 C578,183 615,218 612,264 C609,310 582,352 530,355 C478,358 452,318 448,275 C444,232 482,186 530,188 Z"
+        fill="url(#grad-performance)" opacity="0.50"
+        transform="translate(7,-5) rotate(9,530,270)"/>
+  <!-- Layer 3 (front) -->
+  <path d="M530,188 C578,183 615,218 612,264 C609,310 582,352 530,355 C478,358 452,318 448,275 C444,232 482,186 530,188 Z"
+        fill="url(#grad-performance)" opacity="1.0"/>
+
+  <!-- Icon: 3 ascending bars (white on dark blob) -->
+  <g transform="translate(530,255)" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bar 1 (short) -->
+    <line x1="-14" y1="10" x2="-14" y2="2"/>
+    <line x1="-18" y1="10" x2="-10" y2="10"/>
+    <!-- Bar 2 (medium) -->
+    <line x1="0" y1="10" x2="0" y2="-4"/>
+    <line x1="-4" y1="10" x2="4" y2="10"/>
+    <!-- Bar 3 (tall) -->
+    <line x1="14" y1="10" x2="14" y2="-12"/>
+    <line x1="10" y1="10" x2="18" y2="10"/>
+    <!-- Baseline -->
+    <line x1="-20" y1="12" x2="20" y2="12"/>
+  </g>
+  <!-- Label -->
+  <text x="530" y="298" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF">Performance</text>
+</g>
+
+<!-- ============================================================ -->
+<!-- STEP 4: GROWTH  center(730,215) r~92                         -->
+<!-- ============================================================ -->
+<g id="step-growth">
+  <!-- Layer 1 (back) -->
+  <path d="M730,123 C784,117 825,158 822,208 C819,258 788,307 730,310 C672,313 642,268 638,220 C634,172 676,120 730,123 Z"
+        fill="url(#grad-growth)" opacity="0.30"
+        transform="translate(-8,6) rotate(-12,730,215)"/>
+  <!-- Layer 2 (middle) -->
+  <path d="M730,123 C784,117 825,158 822,208 C819,258 788,307 730,310 C672,313 642,268 638,220 C634,172 676,120 730,123 Z"
+        fill="url(#grad-growth)" opacity="0.50"
+        transform="translate(7,-5) rotate(9,730,215)"/>
+  <!-- Layer 3 (front) -->
+  <path d="M730,123 C784,117 825,158 822,208 C819,258 788,307 730,310 C672,313 642,268 638,220 C634,172 676,120 730,123 Z"
+        fill="url(#grad-growth)" opacity="1.0"/>
+
+  <!-- Icon: up-right arrow (white on dark blob) -->
+  <g transform="translate(730,200)" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="-12" y1="12" x2="12" y2="-12"/>
+    <polyline points="2,-12 12,-12 12,-2"/>
+  </g>
+  <!-- Label -->
+  <text x="730" y="243" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF">Growth</text>
+</g>
+
+<!-- ============================================================ -->
+<!-- EXIT ARROW                                                    -->
+<!-- ============================================================ -->
+<g id="exit-arrow">
+  <!-- Node at departure point on right edge of Growth blob -->
+  <circle cx="822" cy="208" r="5" fill="#E8F0F2" stroke="#2F4F66" stroke-width="1.5"/>
+  <!-- Arrow line from blob edge to upper-right -->
+  <path d="M822,208 C845,175 860,120 880,70" stroke="#2F4F66" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Open arrowhead -->
+  <polyline points="870,75 880,70 876,81" stroke="#2F4F66" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+</svg>

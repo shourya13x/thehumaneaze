@@ -36,18 +36,30 @@ export interface RecurringEngagement {
 /** Case study card */
 export interface CaseStudy {
   id: string;
+  slug: string;
   category: string;
   title: string;
   resultLine: string;
+  clientType?: string;
+  challenge?: string;
+  solution?: string[];
+  results?: string[];
+  metrics?: { label: string; value: string }[];
+  quote?: { text: string; author: string; role: string };
 }
 
 /** Testimonial card */
 export interface Testimonial {
   id: string;
+  slug: string;
   quote: string;
   clientName: string;
   clientTitle: string;
   initials: string;
+  company?: string;
+  industry?: string;
+  highlights?: string[];
+  story?: string[];
 }
 
 /** Team member card */
