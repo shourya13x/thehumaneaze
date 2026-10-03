@@ -8,10 +8,10 @@ export function MeetTheTeamSection() {
     <section className="section-padding bg-white">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <span className="eyebrow">Our Team</span>
+          <span className="eyebrow inline-block rounded-full bg-teal/10 px-4 py-1.5 font-semibold">Meet Our Team</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="mt-4 max-w-xl">Meet the People Behind the Work</h2>
+          <h2 className="mt-4 max-w-xl">People Behind the Work</h2>
         </ScrollReveal>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

@@ -19,7 +19,7 @@ export function WhatWeDoSection() {
     <section className="section-padding bg-cream">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <span className="eyebrow">WHAT WE DO</span>
+          <span className="eyebrow inline-block rounded-full bg-teal/10 px-4 py-1.5 font-semibold">WHAT WE DO</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="mt-4 max-w-2xl">

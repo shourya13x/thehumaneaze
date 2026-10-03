@@ -111,7 +111,7 @@ function GroundShadows() {
   ];
   return (
     <svg
-      viewBox="0 0 600 320"
+      viewBox="0 0 630 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="absolute inset-0 w-full h-full pointer-events-none -z-10"
@@ -143,44 +143,45 @@ export function HeroDiagram() {
   const containerH = 320;
 
   return (
-    <div className="flex flex-col items-center select-none w-full max-w-[600px] gap-4">
-
+    <div className="relative flex flex-col items-center select-none w-full max-w-[600px]">
       {/* Background soft blur blobs for depth */}
       <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] bg-[#d5ebd6] opacity-30 rounded-full blur-3xl pointer-events-none -z-20" />
       <div className="absolute top-[0%] right-[10%] w-[250px] h-[250px] bg-[#557a91] opacity-20 rounded-full blur-3xl pointer-events-none -z-20" />
 
-      {/* Bubble diagram */}
-      <div
-        className="relative w-full"
-        style={{ maxWidth: containerW, height: containerH }}
-      >
-        {/* Ground shadows beneath blobs */}
-        <GroundShadows />
+      {/* Bubble diagram container with responsive scaling */}
+      <div className="w-full max-w-full flex items-center justify-center overflow-hidden">
+        <div className="relative origin-center scale-[0.52] min-[370px]:scale-[0.56] min-[420px]:scale-[0.68] min-[520px]:scale-[0.8] sm:scale-[0.88] md:scale-95 lg:scale-100 transition-transform h-[175px] min-[370px]:h-[190px] min-[420px]:h-[225px] min-[520px]:h-[265px] sm:h-[290px] md:h-[320px] flex items-center justify-center">
+          <div
+            className="relative shrink-0"
+            style={{ width: containerW, height: containerH }}
+          >
+            {/* Ground shadows beneath blobs */}
+            <GroundShadows />
 
-        {bubbles.map((bubble) => {
-          const left = (bubble.xPct / 100) * (containerW - bubble.size);
-          const top = (bubble.yPct / 100) * (containerH - bubble.size);
-          return (
-            <div
-              key={bubble.label}
-              className="absolute flex flex-col items-center justify-center transition-transform duration-500 hover:scale-[1.03]"
-              style={{
-                width: bubble.size,
-                height: bubble.size,
-                left,
-                top,
-              }}
-            >
-              {/* Glassy translucent blob */}
-              <div
-                className="absolute inset-0 flex items-center justify-center transition-all duration-500"
-                style={{
-                  background: bubble.bg,
-                  borderRadius: bubble.borderRadius,
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                  border: `1px solid rgba(255, 255, 255, 0.3)`,
-                  boxShadow: `
+            {bubbles.map((bubble) => {
+              const left = (bubble.xPct / 100) * (containerW - bubble.size);
+              const top = (bubble.yPct / 100) * (containerH - bubble.size);
+              return (
+                <div
+                  key={bubble.label}
+                  className="absolute flex flex-col items-center justify-center transition-transform duration-500 hover:scale-[1.03]"
+                  style={{
+                    width: bubble.size,
+                    height: bubble.size,
+                    left,
+                    top,
+                  }}
+                >
+                  {/* Glassy translucent blob */}
+                  <div
+                    className="absolute inset-0 flex items-center justify-center transition-all duration-500"
+                    style={{
+                      background: bubble.bg,
+                      borderRadius: bubble.borderRadius,
+                      backdropFilter: "blur(16px)",
+                      WebkitBackdropFilter: "blur(16px)",
+                      border: `1px solid rgba(255, 255, 255, 0.3)`,
+                      boxShadow: `
                     inset 0 2px 3px rgba(255,255,255,0.45),
                     inset 0 -4px 8px rgba(0,0,0,0.1),
                     0 4px 8px rgba(0,0,0,0.15),
@@ -188,23 +189,25 @@ export function HeroDiagram() {
                     0 28px 50px -10px rgba(0,0,0,0.18),
                     0 1px 3px rgba(0,0,0,0.1)
                   `,
-                }}
-              >
-                <span style={{ color: bubble.color, opacity: 0.8 }}>
-                  {bubble.icon}
-                </span>
-              </div>
+                    }}
+                  >
+                    <span style={{ color: bubble.color, opacity: 0.8 }}>
+                      {bubble.icon}
+                    </span>
+                  </div>
 
-              {/* Text label strictly below the bubble */}
-              <span
-                className="absolute font-bold text-navy text-sm md:text-base tracking-wide whitespace-nowrap"
-                style={{ top: bubble.size + 12 }}
-              >
-                {bubble.label}
-              </span>
-            </div>
-          );
-        })}
+                  {/* Text label strictly below the bubble */}
+                  <span
+                    className="absolute font-bold text-navy text-sm md:text-base tracking-wide whitespace-nowrap"
+                    style={{ top: bubble.size + 12 }}
+                  >
+                    {bubble.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

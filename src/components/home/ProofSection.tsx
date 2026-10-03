@@ -46,7 +46,7 @@ export function ProofSection() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <ScrollReveal>
-              <span className="eyebrow">PROOF IT WORKS</span>
+              <span className="eyebrow inline-block rounded-full bg-teal/10 px-4 py-1.5 font-semibold">PROOF IT WORKS !</span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="mt-4 max-w-2xl">

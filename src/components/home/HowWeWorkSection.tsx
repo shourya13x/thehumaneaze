@@ -9,15 +9,15 @@ export function HowWeWorkSection() {
     <section className="section-padding bg-white">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <span className="eyebrow">How We Work</span>
+          <span className="eyebrow inline-block rounded-full bg-teal/10 px-4 py-1.5 font-semibold">How We Work</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="mt-4 max-w-2xl">
+          <h2 className="mt-4 md:whitespace-nowrap">
             From HR Challenges to Systems That Work
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>
-          <p className="mt-4 max-w-3xl text-navy/80">
+          <p className="mt-4 max-w-3xl text-justify text-navy/80">
             Every business has different people, processes, and priorities. We take a structured, collaborative approach to understand what you need, build the right solution, and continuously improve it as your business evolves.
           </p>
         </ScrollReveal>
@@ -77,9 +77,12 @@ export function HowWeWorkSection() {
               href="/contact"
               className="group inline-flex items-center gap-1.5 text-sm font-medium text-gray transition-colors hover:text-navy md:text-base"
             >
-              <span>Have an HR challenge you&apos;re trying to solve?</span>
-              <span className="font-semibold text-teal transition-transform group-hover:translate-x-1">
-                &rarr; Let&apos;s talk
+              <span>Having an HR challenge that you&apos;re trying to solve?</span>
+              <span className="inline-flex items-center gap-1.5 font-semibold text-teal transition-transform group-hover:translate-x-1">
+                &rarr;
+                <span className="rounded-full bg-teal/10 px-3 py-1 transition-colors group-hover:bg-teal group-hover:text-white">
+                  Let&apos;s talk
+                </span>
               </span>
             </Link>
           </div>
